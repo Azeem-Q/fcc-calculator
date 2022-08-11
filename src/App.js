@@ -17,7 +17,22 @@ class App extends React.Component {
     render() {
         return (
             <div id="container">
-                <div id="display"></div>
+                <div id="display">
+                <div id='log' style={{
+                        height: '40%',
+                        color: 'white',
+                        display: 'block',
+                        position: 'inline',
+                        float: 'right',
+                        textAlign: 'center'
+                    }}>asd</div>
+                    <div id='initial' style={{
+                        height: '60%',
+                        color: 'white',
+                        float: 'right',
+                        textAlign: 'center'
+                    }}>asd</div>
+                </div>
                 <CalcButton
                     style={{
                         width: 150,
