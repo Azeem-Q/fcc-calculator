@@ -35,7 +35,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            title: 'project-ready-react-boilerplate',
+            title: 'FCC Calculator',
             inject: true,
             template: path.resolve(__dirname, './src/index.html'),
         }),
