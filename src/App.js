@@ -11,15 +11,18 @@ const CalcButton = (props) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            currentNum: '',
+            log: '',
+        };
     }
 
     render() {
         return (
             <div id="container">
                 <div id="display">
-                    <h3 id="log">456123</h3>
-                    <h3 id="initial">123</h3>
+                    <h3 id="log">{this.state.log}</h3>
+                    <h3 id="currentNum">{this.state.currentNum}</h3>
                 </div>
                 <CalcButton
                     style={{
@@ -27,6 +30,12 @@ class App extends React.Component {
                         backgroundColor: 'rgb(173, 0, 0)',
                     }}
                     btnText="AC"
+                    onClick={() => {
+                        return this.setState({
+                            currentNum: '',
+                            log: '',
+                        });
+                    }}
                 />
                 <CalcButton
                     btnText="/"
