@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/digital-7-mono');
+
 body {
     background-color: antiquewhite;
 }
@@ -15,8 +17,25 @@ body {
 }
 
 #display {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 100%;
+    align-items: flex-end;
     height: 75px;
     padding: 2px;
+    font-family: 'Digital-7';
+    margin-bottom: 10px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#log {
+    color: orange;
+}
+
+#initial {
+    font-size: xx-large;
 }
 
 #calcBtn {
@@ -31,7 +50,7 @@ body {
         outline: none;
     }
     &:hover {
-        border: solid rgb(151, 151, 151) 1px;
+        border: solid rgb(184, 184, 184) 1px;
         color: black;
     }
 }
