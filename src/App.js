@@ -3,7 +3,12 @@ import './style.scss';
 
 const CalcButton = (props) => {
     return (
-        <button id="calcBtn" style={props.style} onClick={props.onClick}>
+        <button
+            id="calcBtn"
+            style={props.style}
+            onClick={props.onClick}
+            data-btntext={props.btnText}
+        >
             {props.btnText}
         </button>
     );
@@ -12,9 +17,20 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentNum: '',
+            currentNum: '0',
             log: '',
         };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        console.log('a', e.target.dataset.btntext);
+        this.setState((state) => ({
+            currentNum:
+                state.currentNum === '0'
+                    ? e.target.dataset.btntext
+                    : state.currentNum + e.target.dataset.btntext,
+        }));
     }
 
     render() {
@@ -32,7 +48,7 @@ class App extends React.Component {
                     btnText="AC"
                     onClick={() => {
                         return this.setState({
-                            currentNum: '',
+                            currentNum: '0',
                             log: '',
                         });
                     }}
@@ -49,27 +65,27 @@ class App extends React.Component {
                         backgroundColor: 'gray',
                     }}
                 />
-                <CalcButton btnText="7" />
-                <CalcButton btnText="8" />
-                <CalcButton btnText="9" />
+                <CalcButton btnText="7" onClick={this.handleClick} />
+                <CalcButton btnText="8" onClick={this.handleClick} />
+                <CalcButton btnText="9" onClick={this.handleClick} />
                 <CalcButton
                     btnText="-"
                     style={{
                         backgroundColor: 'gray',
                     }}
                 />
-                <CalcButton btnText="4" />
-                <CalcButton btnText="5" />
-                <CalcButton btnText="6" />
+                <CalcButton btnText="4" onClick={this.handleClick} />
+                <CalcButton btnText="5" onClick={this.handleClick} />
+                <CalcButton btnText="6" onClick={this.handleClick} />
                 <CalcButton
                     btnText="+"
                     style={{
                         backgroundColor: 'gray',
                     }}
                 />
-                <CalcButton btnText="1" />
-                <CalcButton btnText="2" />
-                <CalcButton btnText="3" />
+                <CalcButton btnText="1" onClick={this.handleClick} />
+                <CalcButton btnText="2" onClick={this.handleClick} />
+                <CalcButton btnText="3" onClick={this.handleClick} />
                 <CalcButton
                     btnText="="
                     style={{
@@ -83,6 +99,7 @@ class App extends React.Component {
                     style={{
                         width: 150,
                     }}
+                    onClick={this.handleClick}
                 />
                 <CalcButton btnText="." />
             </div>
