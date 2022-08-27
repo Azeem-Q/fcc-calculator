@@ -5,7 +5,7 @@ body {
 }
 
 #container {
-    width: 314px;
+    width: 389px;
     background-color: black;
     padding: 5px;
     margin: 0 auto;
@@ -31,16 +31,18 @@ body {
 }
 
 #log {
+    max-width: 375px;
     min-height: 30px;
     color: orange;
 }
 
 #currentNum {
+    max-width: 375px;
     font-size: xx-large;
 }
 
 #calcBtn {
-    width: 75px;
+    width: 93.75px;
     height: 75px;
     color: white;
     font-size: x-large;

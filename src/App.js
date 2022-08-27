@@ -30,6 +30,10 @@ class App extends React.Component {
                 state.currentNum === '0'
                     ? e.target.dataset.btntext
                     : state.currentNum + e.target.dataset.btntext,
+            log:
+                state.currentNum === '0'
+                    ? state.log + e.target.dataset.btntext
+                    : state.log + e.target.dataset.btntext,
         }));
     }
 
@@ -42,7 +46,7 @@ class App extends React.Component {
                 </div>
                 <CalcButton
                     style={{
-                        width: 150,
+                        width: 187.5,
                         backgroundColor: 'rgb(173, 0, 0)',
                     }}
                     btnText="AC"
@@ -97,7 +101,7 @@ class App extends React.Component {
                 <CalcButton
                     btnText="0"
                     style={{
-                        width: 150,
+                        width: 187.5,
                     }}
                     onClick={this.handleClick}
                 />
